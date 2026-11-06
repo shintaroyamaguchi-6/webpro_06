@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ゲーム登録</title>
+</head>
+<body>
+    <h2>ゲームを追加</h2>
+
+    <form action="/games_add" method="GET">
+        <p>
+            ID:
+            <input type="number" name="id" required>
+        </p>
+
+        <p>
+            ゲーム名:
+            <input type="text" name="name" required>
+        </p>
+
+        <p>
+            ジャンル:
+            <input type="text" name="genre" required>
+        </p>
+
+        <p>
+            発売年:
+            <input type="number" name="year" required>
+        </p>
+
+        <input type="submit" value="登録">
+    </form>
+
+    <p>
+        <a href="/games">ゲーム一覧に戻る</a>
+    </p>
+</body>
+</html>

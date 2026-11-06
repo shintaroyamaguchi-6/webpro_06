@@ -88,4 +88,32 @@ app.get("/keiyo_add", (req, res) => {
     res.render("db2", { data: station });
 });
 
+let games = [
+    { id: 1, name: "マインクラフト", genre: "サンドボックス", year: 2011 },
+    { id: 2, name: "スプラトゥーン3", genre: "シューティング", year: 2022 },
+    { id: 3, name: "マリオカート8 デラックス", genre: "レース", year: 2017 }
+];
+
+app.get("/games", (req, res) => {
+    res.render("games", { data: games });
+});
+
+app.get("/games_add", (req, res) => {
+    let id = Number(req.query.id);
+    let name = req.query.name;
+    let genre = req.query.genre;
+    let year = Number(req.query.year);
+
+    let newdata = {
+        id: id,
+        name: name,
+        genre: genre,
+        year: year
+    };
+
+    games.push(newdata);
+
+    res.render("games", { data: games });
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

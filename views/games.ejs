@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ゲーム一覧</title>
+</head>
+<body>
+    <h2>ゲーム一覧</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>ゲーム名</th>
+            <th>ジャンル</th>
+            <th>発売年</th>
+        </tr>
+
+        <% for (let row of data) { %>
+        <tr>
+            <td><%= row.id %></td>
+            <td><%= row.name %></td>
+            <td><%= row.genre %></td>
+            <td><%= row.year %></td>
+        </tr>
+        <% } %>
+    </table>
+
+    <p>
+        <a href="/public/games_add.html">新しいゲームを登録</a>
+    </p>
+</body>
+</html>
