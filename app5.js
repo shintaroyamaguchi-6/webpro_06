@@ -143,6 +143,13 @@ app.post("/keiyo2/update/:number", (req, res) => {
   res.redirect('/keiyo2');
 });
 
+app.get("/keiyo2/delete/:number", (req, res) => {
+  // 本来は削除の確認ページを表示する
+  // 本来は削除する番号が存在するか厳重にチェックする
+  station2.splice( req.params.number, 1 );
+  res.redirect('/keiyo2');
+});
+
 let games = [
     { id: 1, name: "マインクラフト", genre: "サンドボックス", year: 2011 },
     { id: 2, name: "スプラトゥーン3", genre: "シューティング", year: 2022 },
