@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>アーティスト名</td><td><%= data.name %></td></tr>
+    <tr><td>ジャンル</td><td><%= data.genre %></td></tr>
+    <tr><td>デビュー年</td><td><%= data.debut %></td></tr>
+    <tr><td>代表曲</td><td><%= data.song %></td></tr>
+  </table>
+  <a href="/artists">一覧に戻る</a>
+</body>
+</html>

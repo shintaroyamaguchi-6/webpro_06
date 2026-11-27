@@ -213,4 +213,24 @@ app.get("/games_add", (req, res) => {
     res.render("games", { data: games });
 });
 
+let artists = [
+  { id:1, name:"YOASOBI", genre:"J-POP", debut:2019, song:"夜に駆ける" },
+  { id:2, name:"Official髭男dism", genre:"J-POP", debut:2018, song:"Pretender" },
+  { id:3, name:"King Gnu", genre:"ロック", debut:2019, song:"白日" },
+  { id:4, name:"Ado", genre:"J-POP", debut:2020, song:"うっせぇわ" },
+  { id:5, name:"back number", genre:"ロック", debut:2011, song:"高嶺の花子さん" },
+];
+
+// 一覧
+app.get("/artists", (req, res) => {
+  res.render('artists', {data: artists} );
+});
+
+// 詳細
+app.get("/artists/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = artists[ number ];
+  res.render('artists_detail', {id: number, data: detail} );
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
